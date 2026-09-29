@@ -1,1 +1,53 @@
-ESCAPE THE BUNKER — VERSÃO 5.43 — 
+ESCAPE THE BUNKER —
+
+
+O Escape The Bunker, é um jogo 2D com visão de cima, em pixel art, desenvolvido no GameMaker com GML. Mistura exploração, investigação, suspense e combate.
+
+O protagonista chega ao Complexo Nereida para realizar uma vistoria ambiental, mas acaba preso em uma instalação subterrânea. Ao procurar uma saída, encontra documentos sobre irregularidades, experiências científicas e criaturas modificadas.
+
+O projeto contém 15 rooms, contando o menu:
+
+| Área | O que existe nela |
+|---|---|
+| Menu principal | Entrada do jogo, configurações e saída. |
+| Área externa | Fachada do complexo e primeiro indício ambiental. |
+| Recepção | Secretária, conversa inicial, protocolo da vistoria e acesso à sala de espera. |
+| Sala de espera | Evento de armadilha e explosão que leva ao subterrâneo. |
+| Sala demolida | Coleta de equipamentos, munição, chave, documentos e primeiros inimigos. |
+| Corredor industrial — fase 1 | Elevador interditado, escombros e acesso à Pesquisa. |
+| Pesquisa — fase 1 | Registros de descarte, inimigos, munição e passagem por duto. |
+| Arquivos de pesquisa | Documentos, cientista e criatura protegendo a área. |
+| Corredor após os escombros | Liga os arquivos, a arena e a escadaria. |
+| Arena do boss | Celas de contenção, chave na cela da esquerda, barris e combate principal. |
+| Corredor — fase 2 | Conecta descanso, ferramentas, depósito, laboratório e escadaria. |
+| Sala de descanso | Café que recupera vida, chave das ferramentas e dormitório fechado. |
+| Sala de ferramentas | Bancadas, prateleiras e pé de cabra coletável. |
+| Depósito / câmara fria | Porta emperrada, interior revelado na mesma room e homem com crachá. |
+| Laboratório — sala 11 | Cápsulas, espécimes, terminal de pesquisa e inimigos. |
+
+As principais mecânicas presentes são:
+
+- **Movimentação e colisões:** jogador com animações direcionais e colisões apoiadas no `Obj_parede`.
+- **Combate:** cano, arremesso de cano, pistola de pregos, munição, dano e vida.
+- **Furtividade:** movimentação com passos leves e lógica de finalização.
+- **Exploração:** portas, chaves, dutos, escadaria e acessos condicionados ao progresso.
+- **Inventário:** controle de armas, munição, chaves, pé de cabra e crachá.
+- **Investigação:** indícios ambientais e documentos registrados no diário.
+- **Interface:** condição do jogador, equipamento, munição, objetivos, diálogos e nomes das portas.
+- **Menus:** pausa, reinício, configurações e transições.
+- **Checkpoints:** rotinas para registrar posição e retornar ao ponto de controle.
+
+Na **luta contra o Homem-Formiga**, a coleta da chave inicia uma cena e bloqueia a saída. O combate possui perseguição e golpes com preparação. O ácido causa dano e abre uma janela de vulnerabilidade para atacar. Ao ficar sem vida, o boss segue para a saída, rompe a barreira e libera a passagem; existe um sprite próprio dele morto no corredor.
+
+Na **fase 2**, a sequência principal envolve conseguir a chave na sala de descanso, recolher o pé de cabra nas ferramentas e abrir a câmara fria. É necessário **segurar E por três segundos**; soltar o botão interrompe o esforço. Ao abrir, o telhado desaparece e revela o interior **sem trocar de room**. O crachá recebido ali libera o laboratório.
+
+O laboratório contém pesquisas sobre **formigas, caracóis, lagartos e cobras**. Os textos levantam dúvidas sobre uso militar e criação de seres meio-humanos. As cobras antecipam uma ameaça maior, mas **não encontrei um boss final de cobra implementado**.
+
+Há alguns detalhes importantes sobre o estado atual:
+
+- O encerramento temporário com créditos continua na escadaria da fase 1. **P funciona como atalho de teste para avançar entre salas**, inclusive para a fase 2.
+- Na câmara fria atual, **o homem está vivo, fala e entrega o crachá**. A versão anterior da ideia, com corpo morto e emboscada logo após a coleta, não está conectada a esse evento.
+- Muitos cenários já usam sprites prontos, mas **ainda existem rotinas de desenho por código**; o projeto não está totalmente convertido para sprites estáticos.
+- A limpeza apenas retirou arquivos auxiliares. Ela não alterou nem corrigiu mecânicas.
+
+O catálogo possui **173 recursos: 89 sprites, 49 objetos, 15 rooms, 13 sons, 6 scripts e 1 fonte**. Este resumo foi conferido nos arquivos da versão atual; não representa um teste completo de execução no GameMaker.
